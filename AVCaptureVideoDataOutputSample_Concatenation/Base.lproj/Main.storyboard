@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="AVCaptureVideoDataOutputSample_Concatenation" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zv0-Ks-VUG">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SVp-EF-cc9">
+                                <rect key="frame" x="0.0" y="567" width="375" height="100"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="73T-up-kjj"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UFl-nq-1FE">
+                                <rect key="frame" x="165" y="597" width="45" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="fQO-yq-nUN"/>
+                                    <constraint firstAttribute="width" constant="45" id="mtb-HJ-340"/>
+                                </constraints>
+                                <state key="normal" image="buttonStop"/>
+                                <connections>
+                                    <action selector="touchDownRecordingButton:" destination="BYZ-38-t0r" eventType="touchDown" id="K6Z-v2-C8o"/>
+                                    <action selector="touchUpRecordingButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CWC-bi-JOf"/>
+                                </connections>
+                            </button>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="1" translatesAutoresizingMaskIntoConstraints="NO" id="dMo-JM-T10">
+                                <rect key="frame" x="21" y="50" width="333" height="2"/>
+                            </progressView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="zv0-Ks-VUG" secondAttribute="bottom" id="34D-cG-1nC"/>
+                            <constraint firstItem="dMo-JM-T10" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="5" id="5Gq-yr-Rn8"/>
+                            <constraint firstItem="UFl-nq-1FE" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="JAX-SY-20A"/>
+                            <constraint firstAttribute="trailing" secondItem="zv0-Ks-VUG" secondAttribute="trailing" id="LdM-xb-p6k"/>
+                            <constraint firstItem="dMo-JM-T10" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="30" id="Lmd-wZ-7pk"/>
+                            <constraint firstItem="SVp-EF-cc9" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="WS9-gT-lcb"/>
+                            <constraint firstItem="SVp-EF-cc9" firstAttribute="leading" secondItem="zv0-Ks-VUG" secondAttribute="leading" id="ahw-g6-ibz"/>
+                            <constraint firstItem="zv0-Ks-VUG" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="cph-Ap-cxf"/>
+                            <constraint firstAttribute="bottom" secondItem="UFl-nq-1FE" secondAttribute="bottom" constant="25" id="n0S-yH-9SX"/>
+                            <constraint firstItem="SVp-EF-cc9" firstAttribute="trailing" secondItem="zv0-Ks-VUG" secondAttribute="trailing" id="oqR-pO-f3Z"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="dMo-JM-T10" secondAttribute="trailing" constant="5" id="uu3-lO-ido"/>
+                            <constraint firstItem="zv0-Ks-VUG" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="yim-b1-8kN"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="previewView" destination="zv0-Ks-VUG" id="HHD-zV-8ho"/>
+                        <outlet property="progressView" destination="dMo-JM-T10" id="jxJ-6Y-5b3"/>
+                        <outlet property="recordingButton" destination="UFl-nq-1FE" id="Rk5-T2-1qA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="138.98050974512745"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="buttonStop" width="45" height="45"/>
+    </resources>
+</document>
