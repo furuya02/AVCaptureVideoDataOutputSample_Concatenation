@@ -1,0 +1,2 @@
+# AVCaptureVideoDataOutputSample_Concatenation
+継ぎ足しで動画録画する
